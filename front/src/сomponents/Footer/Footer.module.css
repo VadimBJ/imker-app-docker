@@ -1,0 +1,81 @@
+.footer{
+    width: 100%;
+    /*background-color: var(--yellow);*/
+    background: linear-gradient(180deg, rgb(236, 213, 196), rgb(211, 168, 99) 12%);
+    text-align: center;
+    z-index: 100;
+    padding-top: 5em;
+}
+.footer_logo_bottom{
+padding-bottom: 25px;
+}
+.logo_footer{
+    height: 80px;
+    margin-top: -30px;
+    margin-bottom: 12px;
+    background-color: var(--yellow);
+    padding: 15px;
+    border-radius: 30%;
+    z-index: 100;
+}
+.my_card{
+    background-color: var(--yellow)!important;
+    border: none !important;
+    width: 33%;
+}
+.card_title{
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.footer_contact_text{
+    margin: 0 0 10px 10px;
+    font-size: 1.0em;
+    text-align: left;
+}
+.footer_data{
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.footer_name_event{
+    margin-bottom: 15px;
+    font-size: 1.0em;
+    text-align: left;
+    text-transform: uppercase;
+}
+.about_links{
+    font-size: 1.0em;
+    margin: 15px 0;
+    text-transform: uppercase;
+    text-align: left;
+}
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin: 20px 0;
+  }
+.social svg{
+    margin: 0 10px;
+    padding: 7px;
+    background-color: var(--terracotta);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icons{
+    color: var(--terracotta);
+    font-size: 1.2em;
+    margin-right: 12px;
+}
+.social_icons{
+    font-size: 3em;
+    color: #fff;
+}
+.footer_events{
+    display: flex;
+}

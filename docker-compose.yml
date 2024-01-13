@@ -1,0 +1,106 @@
+version: '3.7'
+
+services:
+  front:
+#    image: docker-front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: front
+    networks:
+      cloud:
+        ipv4_address: 172.20.0.11
+    ports:
+      - "80:80"
+      - "9000:9000"
+      - "9001:9001"
+    depends_on:
+      - back
+      - minio1
+    extra_hosts:
+      - "back:172.20.0.12"
+      - "imker.minio1:172.20.0.2"
+
+  back:
+#    image: back-img
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: back
+    hostname: back
+    networks:
+      cloud:
+        ipv4_address: 172.20.0.12
+    ports:
+      - 8080:8080
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database/Imker
+      - DIGITAL_OCEAN_S3_ENDPOINT_URL=http://172.20.0.2:9000
+      - DIGITAL_OCEAN_S3_ACCESS_KEY=8tOJvkdE3bwKMHWwXHQT
+      - DIGITAL_OCEAN_S3_SECRET_KEY=re0W2RSCrkArkbL0RtV5LFYHOK4Rwl9oKYpru7Lx
+    extra_hosts:
+      - "imker.minio1:172.20.0.2"
+
+  database:
+#    image: docker-database
+    build:
+      context: ./postrgeSQLdata
+      dockerfile: Dockerfile
+    container_name: database
+    user: postgres
+    networks:
+      cloud:
+        ipv4_address: 172.20.0.13
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_DB=Imker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - PGUSER=postgres
+    healthcheck:
+      test: "pg_isready -d Imker -U postgres"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+
+  minio1:
+    image: quay.io/minio/minio:RELEASE.2024-01-05T22-17-24Z
+    command: server --console-address ":9001" http://minio1/data{1...2}
+    hostname: minio1
+    networks:
+      cloud:
+        ipv4_address: 172.20.0.2
+    volumes:
+      - ./files:/data1
+      - data1-2:/data2
+    expose:
+      - "9000"
+      - "9001"
+    environment:
+      - MINIO_BUCKET_NAME=imker
+      - MINIO_ROOT_USER=8tOJvkdE3bwKMHWwXHQT
+      - MINIO_ROOT_PASSWORD=re0W2RSCrkArkbL0RtV5LFYHOK4Rwl9oKYpru7Lx
+    healthcheck:
+      test: [ "CMD", "mc", "ready", "local" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  data1-1:
+  data1-2:
+  pgdata:
+
+networks:
+  cloud:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

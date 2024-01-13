@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="#1" author="vadim">
+        <createTable tableName="requests">
+            <column name="id_request" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="creation_time_request" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="first_name_request" type="varchar(50)"/>
+            <column name="last_name_request" type="varchar(50)"/>
+            <column name="email_request" type="varchar(50)"/>
+            <column name="phone_request" type="varchar(50)"/>
+            <column name="text_of_request" type="varchar(500)"/>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="#2" author="vadim">
+        <createTable tableName="posts">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="creation_time_post" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="title_post" type="varchar(300)"/>
+            <column name="link_to_img" type="varchar(300)"/>
+            <column name="short_post_description" type="varchar(400)"/>
+            <column name="text_of_post" type="TEXT"/>
+            <column name="author_name" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#3" author="alexandr">
+        <createTable tableName="account">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="varchar(300)"/>
+            <column name="name" type="varchar(300)"/>
+            <column name="hash_password" type="varchar(300)"/>
+            <column name="secret_question" type="varchar(300)"/>
+            <column name="answer_secret_question" type="varchar(300)"/>
+            <column name="plz" type="varchar(5)"/>
+            <column name="phone" type="varchar(300)"/>
+            <column name="image" type="varchar"/>
+            <column name="role" type="varchar(30)"/>
+            <column name="state" type="varchar(30)"/>
+            <column name="is_login" type="bool"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#4" author="andrii">
+        <createTable tableName="events">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(250)"/>
+            <column name="address" type="varchar(250)"/>
+            <column name="author" type="varchar(50)"/>
+            <column name="description" type="text"/>
+            <column name="short_description" type="varchar(250)"/>
+            <column name="photo" type="varchar(250)"/>
+            <column name="date_start" type="varchar(50)"/>
+            <column name="date_end" type="varchar(50)"/>
+            <column name="start_time" type="varchar(50)"/>
+            <column name="end_time" type="varchar(50)"/>
+            <column name="location" type="varchar(1000)"/>
+            <column name="status" type="varchar(50)"/>
+            <column name="quantity_of_members" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#5" author="Valentyna">
+        <createTable tableName="member">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="state" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="position" type="varchar(100)"/>
+            <column name="description" type="varchar(300)"/>
+            <column name="image" type="varchar(300)"/>
+            <column name="phone" type="varchar(15)"/>
+            <column name="email" type="varchar(150)"/>
+            <column name="facebook" type="varchar(150)"/>
+            <column name="instagram" type="varchar(150)"/>
+        </createTable>
+
+        <!--        <loadData tableName="member"-->
+        <!--                  file="db/data/members.csv">-->
+        <!--        </loadData>-->
+
+    </changeSet>
+
+    <changeSet id="#6" author="vadim">
+        <createTable tableName="files">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="creation_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="varchar(100)"/>
+            <column name="original_name" type="varchar(100)"/>
+            <column name="stored_name" type="varchar(150)"/>
+            <column name="file_type" type="varchar(30)"/>
+            <column name="size" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#7" author="vadim">
+        <createTable tableName="google_map">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="google_map_link" type="varchar(1000)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#8" author="andrii">
+        <createTable tableName="user_event">
+            <column name="user_id" type="BIGINT">
+                <constraints foreignKeyName="fk_user_event_account"
+                             references="account(id)"/>
+            </column>
+
+            <column name="events_id" type="BIGINT">
+                <constraints foreignKeyName="fk_user_event_events"
+                             references="events(id)"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#9" author="vadim">
+        <createTable tableName="gallery">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="creation_time_photo" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="link_to_img" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#10" author="vadim">
+        <createTable tableName="address">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="address" type="varchar(300)"/>
+            <column name="phone" type="varchar(300)"/>
+            <column name="email" type="varchar(300)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#11" author="Valentyna">
+        <createTable tableName="aboutus">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title_top" type="varchar(150)"/>
+            <column name="description_top" type="varchar(10000)"/>
+            <column name="title_bottom" type="varchar(150)"/>
+            <column name="description_bottom" type="varchar(10000)"/>
+            <column name="image1" type="varchar(100)"/>
+            <column name="image2" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#12" author="vadim">
+        <createTable tableName="slider">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="creation_time_slider" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="link_to_img" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="#13" author="vadim">
+        <createTable tableName="comment">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="creation_time_comment" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="comment_text" type="TEXT"/>
+
+            <column name="user_id" type="int"/>
+            <column name="event_id" type="int"/>
+            <column name="post_id" type="int"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

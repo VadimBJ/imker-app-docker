@@ -1,0 +1,177 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "react-toastify/dist/ReactToastify.css";
+@import "react-datepicker/dist/react-datepicker.css";
+@import "assets/reset.css";
+@import "@fontsource/roboto/300.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+@import "swiper/css";
+@import "swiper/css/free-mode";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --yellow: #d3a863;
+  --terracotta: #c74817;
+  --text-color: #5b5858;
+  --bg-color: #f7f3f0;
+  --bold-text: #131313;
+  --border-color: #545050;
+  --header-active-nav-btn: #ff6b00;
+  --button-burger-menu-bg: #dfe6e6;
+
+  --button-past-events: #a5a5a5;
+
+  --first-color-gradient: rgb(236, 213, 196);
+  --second-color-gradient: rgb(247, 243, 240);
+  --bg-button-admin: rgb(255, 186, 96);
+}
+
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  color: var(--border-color);
+}
+h1 {
+  color: var(--terracotta);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h2 {
+  color: var(--terracotta);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+h3 {
+  color: var(--terracotta);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+h4 {
+  color: var(--terracotta);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.page-link {
+  background-color: var(--terracotta) !important;
+  color: var(--bg-color) !important;
+  font-weight: 200;
+}
+.active > .page-link,
+.page-link.active {
+  border-color: var(--yellow) !important;
+  border: 2px solid;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+.button_imker {
+  background-color: var(--terracotta);
+  color: white;
+  padding: 10px 15px 12px;
+  border-radius: 5px;
+  border: none;
+}
+.button_imker:hover {
+  background-color: var(--yellow);
+  color: white;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  background: #ffffff;
+  color: #000;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+.css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: var(--yellow) !important;
+}

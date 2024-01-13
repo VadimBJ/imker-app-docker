@@ -1,0 +1,36 @@
+### GET Event
+
+GET localhost:8080/api/events/4
+
+### Delete Event
+
+DELETE localhost:8080/api/events/1
+
+### Update event
+
+PUT localhost:8080/api/events/2
+Content-Type: application/json
+
+{
+  "title" : "Second",
+  "status" : "ENDED",
+  "address" : "",
+  "author" : "updatedNewAuthor",
+  "description" : "updatedNewDescription",
+  "shortDescription" : "somethingShort",
+  "location" : "updatedNewLocation",
+  "photo" : "updatedNewPhotoAddress",
+  "dateStart" : "2024-04-04",
+  "dateEnd" : "2024-04-05",
+  "startTime" : "12:12",
+  "endTime" : "13:13"
+
+}
+
+
+### Get Event (sort)order by startDAte WORKS
+GET localhost:8080/api/events?orderBy=dateStart&desc=false&pageSize=3&page=0
+
+### Get all events
+GET localhost:8080/api/events/getAll
+
