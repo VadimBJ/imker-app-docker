@@ -2,7 +2,7 @@
 *The project is a website platform for the beekeeping community in Germany. It comprises four main components: frontend, backend, PostgreSQL database, and utilizes Amazon S3 for object storage. All these components are encapsulated within a Docker container for convenient deployment and usage.*
 
 ## Technology Stack
-
+<div style="display: flex; flex-wrap: nowrap; margin: 10px;">
 <img src="https://img.shields.io/badge/Spring Boot-grey?style=for-the-badge&logo=Spring Boot&logoColor=white">
 <img src="https://img.shields.io/badge/spring security-grey?style=for-the-badge&logo=spring security&logoColor=white">
 <img src="https://img.shields.io/badge/spring hibernate-grey?style=for-the-badge&logo=hibernate&logoColor=white">
@@ -24,6 +24,7 @@
 <img src="https://img.shields.io/badge/swiper-blue?style=for-the-badge&logo=swiper&logoColor=white">
 <img src="https://img.shields.io/badge/swiper-blue?style=for-the-badge&logo=swiper&logoColor=white">
 <img src="https://img.shields.io/badge/docker-white?style=for-the-badge&logo=docker&logoColor=blue">
+</div>
 
 Original repositories: [BACK](https://github.com/StopkinOlexandr/imker_back) | [FRONT](https://github.com/Andrii-Lytvyn/imker)
 
