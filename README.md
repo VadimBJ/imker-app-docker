@@ -26,7 +26,7 @@
 </div>
 
 
-Original repositories: [BACK](https://github.com/StopkinOlexandr/imker_back) | [FRONT](https://github.com/Andrii-Lytvyn/imker)
+Development repositories: [BACK](https://github.com/StopkinOlexandr/imker_back) | [FRONT](https://github.com/Andrii-Lytvyn/imker)
 
 
 ## Installation and Usage
