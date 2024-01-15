@@ -22,9 +22,9 @@
 <img src="https://img.shields.io/badge/mui-blue?style=for-the-badge&logo=mui&logoColor=white">
 <img src="https://img.shields.io/badge/bootstrap-blue?style=for-the-badge&logo=bootstrap&logoColor=white">
 <img src="https://img.shields.io/badge/swiper-blue?style=for-the-badge&logo=swiper&logoColor=white">
-<img src="https://img.shields.io/badge/swiper-blue?style=for-the-badge&logo=swiper&logoColor=white">
 <img src="https://img.shields.io/badge/docker-white?style=for-the-badge&logo=docker&logoColor=blue">
 </div>
+
 
 Original repositories: [BACK](https://github.com/StopkinOlexandr/imker_back) | [FRONT](https://github.com/Andrii-Lytvyn/imker)
 
@@ -52,8 +52,8 @@ To work with the project, you need to install Docker.
    docker-compose up
    ```
 
-After completing these steps, your project should be accessible 
-at `localhost/imker/`. 
+After completing these steps, project should be accessible 
+at http://localhost/imker/. 
 
 ### Authentication Data
 
@@ -104,15 +104,15 @@ The Footer consists of three informative blocks:
 
 The homepage features:
 
-- **Banner Slider:** Images are added through the admin panel. Supports swipe gestures with the mouse or touch input.
+- **Banner Slider:** Images are added through the admin panel. Swipe functionality is supported using either the mouse or screen touch.
 
-- **"Our Mission" Block:** Customer's wish, hardcoded (can be replaced with an "About Us" block with admin panel control).
+- **"UNSERE MISSION" Block:** Contains a description of the community's mission, key goals, and values.
 
 - **Sidebar with Articles:** Displays the four latest articles and a button to access all articles.
 
-- **"Varieties of Honey" Block:** Customer's wish, hardcoded. Clicking opens an article about honey varieties.
+- **"HONIGSORTEN" Block:** Includes a visual representation of the main honey varieties with links to related articles.
 
-- **"Our Team of Experts" Block:** Contains information about the community's "experts." Managed through the admin panel.
+- **"UNSER EXPERTENTEAM" Block:** Contains information about the community's "experts." Managed through the admin panel.
 
 ### BLOG Page
 
@@ -121,7 +121,7 @@ Managed through the admin panel, the Blog page includes:
 - **Sidebar with a List of Current Community Events**
 
 - **List of Available Articles with Pagination:**
-   - Featured photo of the article
+   - Main photo of the article
    - Date of publication and author
    - Article title
    - Brief description
@@ -201,14 +201,14 @@ Community photo gallery (managed through the admin panel). Includes:
 
 - **Section Description**
 
-- **Photo Gallery with Pagination:** Clicking on a photo opens a modal window with the full-size photograph.
+- **Photo Gallery with Pagination:** Clicking on a photo opens a modal window with the full-size image.
 
 ### KONTAKT Page
 
 Includes:
 
 - **Community Contacts:**
-    - Mailing address
+    - Postal address
     - Phone number
     - E-mail
     - Interactive Google Map
@@ -226,11 +226,11 @@ Includes:
 - **User Information Block:**
     - E-mail
     - Phone number
-    - Mailing address
+    - Postcode (Postleitzahl)
 
-- **Scheduled Events Block:** Displays events (with pagination) that the community member has subscribed to. A button is available to unsubscribe.
+- **Scheduled Events Block:** Displays events (with pagination) that the community member has subscribed to. There is also a unsubscribe button.
 
-- **User Settings:** Here, the user can modify their personal information and avatar.
+- **User Settings:** Here user can modify their personal information and avatar.
 
 ### Comments Panel
 
@@ -247,11 +247,12 @@ Contains a list of comments already written by community members, as well as a p
 ### BLOG Tab
 
 Capabilities:
-- View a list of available articles with pagination.
-- Edit a selected article.
-- Create a new article.
+- View a list of available posts with pagination.
+- Edit a selected post.
+- Create a new post.
 
-To create a new article, enter the article title, a brief content summary, the author's name (optional), and upload a featured image for the article. An editor with extensive functionality is integrated for article composition.
+To create a new post, enter the post title, a brief content summary, the author's name (optional), and upload a main image for the post. 
+An editor with extensive functionality is integrated for post composition.
 
 ![img1.jpg](img1.jpg)
 
